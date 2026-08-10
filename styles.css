@@ -223,18 +223,19 @@ h2 {
 
 .hero__text,
 .split__content p,
-.section-heading p,
+.section-heading p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
 .card p,
 .feature p,
 .contact-card p {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--muted);
 }
 
 .section--light .split__content p,
 .section--light .section-heading p,
-.section--light .feature p,
 .section--light .contact-panel p,
-.section--light .card p,
 .section--light .showcase__content p {
   color: var(--muted);
 }
