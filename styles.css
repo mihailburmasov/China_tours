@@ -233,7 +233,9 @@ h2 {
 .section--light .split__content p,
 .section--light .section-heading p,
 .section--light .feature p,
-.section--light .contact-panel p {
+.section--light .contact-panel p,
+.section--light .card p,
+.section--light .showcase__content p {
   color: var(--muted);
 }
 
@@ -339,6 +341,68 @@ h2 {
   align-items: center;
 }
 
+.showcase-section {
+  min-height: auto;
+  padding: 5rem 0 3rem;
+}
+
+.showcase {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.showcase__media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.8rem;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.16);
+}
+
+.showcase__media img {
+  width: 100%;
+  min-height: 420px;
+  object-fit: cover;
+}
+
+.showcase__badge {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  padding: 0.7rem 0.95rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--accent);
+  font-weight: 700;
+  backdrop-filter: blur(8px);
+}
+
+.showcase__list {
+  display: grid;
+  gap: 0.8rem;
+  margin: 1.3rem 0 1.5rem;
+}
+
+.showcase__list > div {
+  padding: 0.95rem 1rem;
+  border-radius: 1rem;
+  background: white;
+  border: 1px solid rgba(17, 61, 114, 0.08);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+}
+
+.showcase__list strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--accent);
+}
+
+.showcase__list span {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .split__media img {
   width: 100%;
   min-height: 380px;
@@ -364,6 +428,12 @@ h2 {
   overflow: hidden;
   color: var(--text);
   box-shadow: 0 24px 60px rgba(5, 15, 35, 0.14);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 70px rgba(5, 15, 35, 0.2);
 }
 
 .card img {
@@ -526,6 +596,7 @@ h2 {
 
 @media (max-width: 960px) {
   .split,
+  .showcase,
   .contact-panel,
   .card-grid,
   .features-grid,
@@ -550,6 +621,7 @@ h2 {
 @media (max-width: 720px) {
   .hero__stats,
   .split,
+  .showcase,
   .contact-panel,
   .features-grid,
   .card-grid--2 {
