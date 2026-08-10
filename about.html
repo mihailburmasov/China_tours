@@ -6,75 +6,83 @@
     <title>О поездке | ChinaTours by Аля</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <header class="site-header">
-      <div class="container nav-shell">
-        <a class="brand" href="index.html">
-          <span class="brand-mark">C</span>
-          <span>ChinaTours by Аля</span>
-        </a>
-        <button class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-        <nav class="site-nav">
-          <a href="index.html">Главная</a>
-          <a href="tours.html">Туры</a>
-          <a href="about.html" class="active">О поездке</a>
-          <a href="contacts.html">Контакты</a>
-        </nav>
-      </div>
+  <body class="page-body">
+    <header class="page-header">
+      <a class="brand" href="index.html"><span class="brand-mark">C</span><span>ChinaTours by Аля</span></a>
+      <button class="menu-btn" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button>
     </header>
+    <div class="side-panel" aria-label="Боковое меню">
+      <button class="side-panel__close" aria-label="Закрыть меню">×</button>
+      <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">О путешествии</a>
+        <a href="routes/index.html">Маршруты</a>
+        <a href="services.html">Услуги</a>
+        <a href="excursions.html">Экскурсии</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+    </div>
+    <div class="overlay"></div>
 
     <main>
-      <section class="page-hero">
-        <div class="container">
+      <section class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1800&q=80')">
+        <div class="page-hero__overlay"></div>
+        <div class="container page-hero__content">
           <p class="eyebrow">О поездке</p>
-          <h1>Наша задача — сделать Китай удобным, красивым и понятным</h1>
-          <p>Мы не просто продаём маршрут, а выстраиваем поездку так, чтобы был ощущение лёгкости и доверия с первого разговора.</p>
+          <h1>Наша задача — сделать Китай удобным, красивым и понятным.</h1>
+          <p>Мы не просто подбираем маршрут, а выстраиваем поездку вокруг вашего темпа, интересов и ощущения комфорта с самого первого разговора.</p>
         </div>
       </section>
 
-      <section class="section">
-        <div class="container about-grid">
-          <div class="card">
-            <h3>Что отличает нас</h3>
-            <p>Мы делаем акцент на человеческом контакте и понятной логистике: заранее рассказываем, что ожидать, какие моменты стоит учесть и как всё организовано.</p>
-          </div>
-          <div class="card">
-            <h3>Что входит в программу</h3>
-            <p>Размещение, трансферы, экскурсионная программа, помощь в выборе транспорта и рекомендациях по питанию — всё, что делает поездку комфортной.</p>
-          </div>
-          <div class="card">
-            <h3>Для кого подходят туры</h3>
-            <p>Для тех, кто любит историю, архитектуру, гастрономию, прогулки по улицам и города с характером. Также для тех, кто хочет увидеть Китай без лишнего стресса.</p>
+      <section class="section section--light">
+        <div class="container split reveal">
+          <div class="split__media"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80" alt="Китайский маршрут" /></div>
+          <div class="split__content">
+            <p class="eyebrow">Почему выбирают нас</p>
+            <h2>Путешествие, в котором есть и эмоция, и спокойствие.</h2>
+            <p>Мы продумываем не только достопримечательности, но и ритм дня: когда лучше ехать, где останавливаться, как распределить нагрузку и где дать себе время просто прожить город.</p>
+            <ul class="list">
+              <li>Индивидуальный подбор маршрута под даты и интересы</li>
+              <li>Поддержка в поездке и помощь с логистикой</li>
+              <li>Прозрачный формат без лишней суеты и лишних расходов</li>
+            </ul>
           </div>
         </div>
       </section>
 
-      <section class="section alt-bg">
-        <div class="container faq-list">
-          <div class="section-heading">
-            <p class="eyebrow">FAQ</p>
-            <h2>Ответы на самые частые вопросы</h2>
+      <section class="section section--light">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Как мы работаем</p>
+            <h2>Каждая поездка строится по простому принципу: вы чувствуете себя спокойно и в курсе всех деталей.</h2>
           </div>
-          <div class="faq-item">
-            <h3>Можно ли подобрать маршрут под конкретные даты?</h3>
-            <p>Да. Мы обсуждаем даты, бюджет и интересы, после чего подбираем подходящий вариант.</p>
+          <div class="card-grid">
+            <article class="card card--text reveal">
+              <h3>1. Слушаем</h3>
+              <p>Выбираем формат поездки: спокойный, насыщенный, гастрономический, камерный или с акцентом на историю.</p>
+            </article>
+            <article class="card card--text reveal">
+              <h3>2. Продумываем</h3>
+              <p>Собираем логистику, темп, удобные перемещения и наиболее сильные точки маршрута.</p>
+            </article>
+            <article class="card card--text reveal">
+              <h3>3. Поддерживаем</h3>
+              <p>Остаёмся рядом в поездке, чтобы всё проходило мягко, понятно и без лишнего стресса.</p>
+            </article>
           </div>
-          <div class="faq-item">
-            <h3>Нужен ли русский гид?</h3>
-            <p>В большинстве маршрутов мы предлагаем сопровождение и помощь с языковым барьером, чтобы поездка проходила комфортно.</p>
+        </div>
+      </section>
+
+      <section class="section section--dark section--quote">
+        <div class="container quote reveal">
+          <div>
+            <p class="eyebrow">Подбор поездки</p>
+            <h2>Если хотите увидеть Китай не как набор достопримечательностей, а как живую и комфортную историю — мы поможем.</h2>
           </div>
-          <div class="faq-item">
-            <h3>Подходит ли маршрут для первого визита в Китай?</h3>
-            <p>Да. Мы особенно хорошо работаем с первыми поездками, помогая сделать маршрут понятным и удобным.</p>
-          </div>
+          <a class="btn btn--primary" href="contacts.html">Связаться</a>
         </div>
       </section>
     </main>

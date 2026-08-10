@@ -6,48 +6,46 @@
     <title>Контакты | ChinaTours by Аля</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <header class="site-header">
-      <div class="container nav-shell">
-        <a class="brand" href="index.html">
-          <span class="brand-mark">C</span>
-          <span>ChinaTours by Аля</span>
-        </a>
-        <button class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-        <nav class="site-nav">
-          <a href="index.html">Главная</a>
-          <a href="tours.html">Туры</a>
-          <a href="about.html">О поездке</a>
-          <a href="contacts.html" class="active">Контакты</a>
-        </nav>
-      </div>
+  <body class="page-body">
+    <header class="page-header">
+      <a class="brand" href="index.html"><span class="brand-mark">C</span><span>ChinaTours by Аля</span></a>
+      <button class="menu-btn" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button>
     </header>
+    <div class="side-panel" aria-label="Боковое меню">
+      <button class="side-panel__close" aria-label="Закрыть меню">×</button>
+      <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">О путешествии</a>
+        <a href="routes/index.html">Маршруты</a>
+        <a href="services.html">Услуги</a>
+        <a href="excursions.html">Экскурсии</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+    </div>
+    <div class="overlay"></div>
 
     <main>
-      <section class="page-hero">
-        <div class="container">
+      <section class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80')">
+        <div class="page-hero__overlay"></div>
+        <div class="container page-hero__content">
           <p class="eyebrow">Контакты</p>
-          <h1>Пишите — и мы быстро подберём вариант поездки под ваш запрос</h1>
-          <p>Оставьте контакты, а Аля свяжется с вами и подскажет лучший маршрут.</p>
+          <h1>Пишите — и мы быстро подберём вариант поездки под ваш запрос.</h1>
+          <p>Оставьте контакты, а Аля свяжется с вами и подскажет лучший маршрут, который будет удобен именно вам.</p>
         </div>
       </section>
 
-      <section class="section">
-        <div class="container contact-grid">
-          <div class="card contact-card">
-            <h3>Связаться напрямую</h3>
+      <section class="section section--light">
+        <div class="container contact-panel reveal">
+          <div class="contact-card">
+            <p class="eyebrow">Связаться напрямую</p>
+            <h2>Подберём маршрут под ваши даты, интересы и темп.</h2>
             <ul class="contact-list">
               <li><strong>Телефон:</strong> <a href="tel:+79036814344">+7 903 681 43 44</a></li>
               <li><strong>Контакт:</strong> Аля</li>
-              <li><strong>Режим:</strong> ответы и подбор маршрутов в рабочее время</li>
+              <li><strong>Формат работы:</strong> подбор маршрутов, ответы на вопросы и помощь в планировании</li>
             </ul>
           </div>
           <form class="card form-card" id="lead-form">
@@ -67,7 +65,7 @@
               Что важно в поездке?
               <textarea name="message" rows="4" placeholder="Хотите увидеть Пекин, гастрономию, спокойный маршрут или что-то другое?"></textarea>
             </label>
-            <button class="btn btn-primary" type="submit">Отправить заявку</button>
+            <button class="btn btn--primary" type="submit">Отправить заявку</button>
             <p class="form-note" id="form-note">Нажмите кнопку, и мы получим ваш запрос.</p>
           </form>
         </div>

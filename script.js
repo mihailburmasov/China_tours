@@ -26,6 +26,17 @@ document.querySelectorAll('.side-panel a').forEach((link) => {
   link.addEventListener('click', () => setMenuState(false));
 });
 
+const form = document.getElementById('lead-form');
+const formNote = document.getElementById('form-note');
+
+form?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (formNote) {
+    formNote.textContent = 'Спасибо! Мы получили ваш запрос и скоро свяжемся с вами.';
+  }
+  form.reset();
+});
+
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
