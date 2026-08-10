@@ -446,6 +446,23 @@ h2 {
   padding: 1.2rem;
 }
 
+.card-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.9rem;
+}
+
+.card-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
 .card--text {
   padding: 1.5rem;
 }
