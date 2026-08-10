@@ -1,20 +1,49 @@
-const toggle = document.querySelector('.nav-toggle');
-const nav = document.querySelector('.site-nav');
+const toggle = document.querySelector('.menu-btn');
+const panel = document.querySelector('.side-panel');
+const overlay = document.querySelector('.overlay');
+const closeBtn = document.querySelector('.side-panel__close');
 
-if (toggle && nav) {
-  toggle.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(isOpen));
-  });
+function setMenuState(isOpen) {
+  panel?.classList.toggle('open', isOpen);
+  overlay?.classList.toggle('open', isOpen);
+  document.body.classList.toggle('menu-open', isOpen);
+  toggle?.setAttribute('aria-expanded', String(isOpen));
 }
 
-const form = document.getElementById('lead-form');
-const note = document.getElementById('form-note');
+toggle?.addEventListener('click', () => {
+  setMenuState(true);
+});
 
-if (form && note) {
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    note.textContent = 'Спасибо! Мы получили ваш запрос и скоро свяжемся с вами.';
-    form.reset();
+closeBtn?.addEventListener('click', () => {
+  setMenuState(false);
+});
+
+overlay?.addEventListener('click', () => {
+  setMenuState(false);
+});
+
+document.querySelectorAll('.side-panel a').forEach((link) => {
+  link.addEventListener('click', () => setMenuState(false));
+});
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+document.querySelectorAll('.reveal').forEach((item) => observer.observe(item));
+
+const parallaxItems = document.querySelectorAll('[data-parallax]');
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY;
+  parallaxItems.forEach((item) => {
+    const speed = Number(item.dataset.parallax || 0.08);
+    item.style.transform = `translate3d(0, ${scrolled * speed}px, 0)`;
   });
-}
+});
