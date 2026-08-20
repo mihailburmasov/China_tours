@@ -290,6 +290,7 @@ h2 {
   border-radius: 1rem;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(8px);
+  text-align: center;
 }
 
 .hero__stats strong {
@@ -862,6 +863,63 @@ h2 {
   font-size: 0.9rem;
   color: var(--muted);
   margin-top: 0.8rem;
+}
+
+.material-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.material-item {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.1rem 1.4rem;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.06);
+}
+
+.material-item summary {
+  cursor: pointer;
+  list-style: none;
+  font-weight: 700;
+  font-size: 1.02rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.material-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.material-item summary::after {
+  content: '+';
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg-soft);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+
+.material-item[open] summary::after {
+  content: '–';
+}
+
+.material-item p {
+  color: var(--muted);
+  margin: 0.9rem 0 0;
+}
+
+.material-item p + p {
+  margin-top: 0.6rem;
 }
 
 .email-list {
