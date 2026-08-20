@@ -177,7 +177,7 @@ img {
 }
 
 .hero__layer {
-  background-image: url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1800&q=80');
+  background-image: url('images/hero-heihe.jpg');
 }
 
 .hero::after,
@@ -464,6 +464,28 @@ h2 {
   height: 24px;
 }
 
+.card--featured {
+  grid-column: span 2;
+  border: 2px solid var(--primary);
+  background: linear-gradient(135deg, rgba(220, 106, 27, 0.08), rgba(255, 255, 255, 0.96));
+}
+
+.card--featured .card__body {
+  padding: 1.6rem;
+}
+
+.card-badge {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: var(--primary);
+  color: white;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.7rem;
+}
+
 .card--text {
   padding: 1.5rem;
 }
@@ -709,6 +731,31 @@ h2 {
   font-weight: 800;
   font-size: 0.95rem;
   letter-spacing: 0.02em;
+}
+
+.messenger-qr {
+  margin-top: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.messenger-qr img {
+  width: 160px;
+  border-radius: 1rem;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.3);
+}
+
+.messenger-qr p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+}
+
+.messenger-qr p a {
+  color: white;
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 .form-note {

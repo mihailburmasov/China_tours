@@ -28,11 +28,32 @@ document.querySelectorAll('.side-panel a').forEach((link) => {
 
 const form = document.getElementById('lead-form');
 const formNote = document.getElementById('form-note');
+const MAX_LINK = 'https://max.ru/heihedenta';
 
 form?.addEventListener('submit', (event) => {
   event.preventDefault();
+  const data = new FormData(form);
+  const summary = [
+    'Заявка с сайта Heihetravel',
+    `Имя: ${data.get('name') || '—'}`,
+    `Телефон: ${data.get('phone') || '—'}`,
+    `Даты поездки: ${data.get('dates') || '—'}`,
+    `Что важно: ${data.get('message') || '—'}`,
+  ].join('\n');
+
+  const openMax = () => window.open(MAX_LINK, '_blank', 'noopener');
+
+  if (navigator.clipboard?.writeText) {
+    navigator.clipboard
+      .writeText(summary)
+      .then(openMax)
+      .catch(openMax);
+  } else {
+    openMax();
+  }
+
   if (formNote) {
-    formNote.textContent = 'Спасибо! Мы получили ваш запрос и скоро свяжемся с вами.';
+    formNote.textContent = 'Спасибо! Текст заявки скопирован — мы открыли MAX, вставьте и отправьте сообщение, чтобы мы получили его быстрее всего.';
   }
   form.reset();
 });
