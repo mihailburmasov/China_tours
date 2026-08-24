@@ -106,6 +106,7 @@ img {
   right: 0;
   width: min(340px, 90vw);
   height: 100vh;
+  height: 100dvh;
   background: rgba(7, 17, 31, 0.96);
   color: white;
   padding: 2rem 1.4rem;
@@ -115,6 +116,8 @@ img {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .side-panel.open {
@@ -752,6 +755,26 @@ h2 {
   background: linear-gradient(140deg, #2aabee 0%, #229ed9 100%);
 }
 
+.qk-wa {
+  background: linear-gradient(140deg, #6fdb6f 0%, #25d366 100%);
+}
+
+.footer-messengers {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.footer-messengers .quicklink {
+  width: 40px;
+  height: 40px;
+  border-radius: 24%;
+}
+
+.footer-messengers .quicklink svg {
+  width: 20px;
+}
+
 .messenger-qr {
   margin-top: 2.25rem;
   display: flex;
@@ -872,6 +895,19 @@ h2 {
   font-size: 0.9rem;
   color: var(--muted);
   margin-top: 0.8rem;
+}
+
+.video-frame {
+  max-width: 720px;
+  margin: 0 auto;
+  border-radius: 1.6rem;
+  overflow: hidden;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.16);
+}
+
+.video-frame video {
+  display: block;
+  width: 100%;
 }
 
 .material-list {
