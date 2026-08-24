@@ -747,6 +747,14 @@ h2 {
   object-fit: cover;
 }
 
+.qk-tg svg {
+  transform: scale(0.92);
+}
+
+.qk-wa svg {
+  transform: scale(0.7);
+}
+
 .qk-max {
   background: linear-gradient(140deg, #3d7bff 0%, #6a4cf0 55%, #9c4fe0 100%);
 }
@@ -769,10 +777,6 @@ h2 {
   width: 40px;
   height: 40px;
   border-radius: 24%;
-}
-
-.footer-messengers .quicklink svg {
-  width: 20px;
 }
 
 .messenger-qr {
