@@ -180,7 +180,7 @@ img {
 }
 
 .hero__layer {
-  background-image: url('images/hero-heihe.jpg');
+  background-image: url('images/hero-great-wall.jpg');
 }
 
 .hero::after,
@@ -1030,12 +1030,17 @@ h2 {
 }
 
 .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.js-anim .reveal {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.75s ease, transform 0.75s ease;
 }
 
-.reveal.is-visible {
+.js-anim .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }

@@ -58,18 +58,25 @@ form?.addEventListener('submit', (event) => {
   form.reset();
 });
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
+const revealItems = document.querySelectorAll('.reveal');
 
-document.querySelectorAll('.reveal').forEach((item) => observer.observe(item));
+if ('IntersectionObserver' in window && revealItems.length) {
+  document.documentElement.classList.add('js-anim');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.05, rootMargin: '0px 0px -10% 0px' }
+  );
+
+  revealItems.forEach((item) => observer.observe(item));
+}
 
 const parallaxItems = document.querySelectorAll('[data-parallax]');
 window.addEventListener('scroll', () => {
