@@ -67,6 +67,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://example.com/documents.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://example.com/contacts.html</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
