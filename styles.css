@@ -443,6 +443,7 @@ h2 {
 }
 
 .card {
+  position: relative;
   background: rgba(255, 255, 255, 0.92);
   border-radius: 1.3rem;
   overflow: hidden;
@@ -452,7 +453,7 @@ h2 {
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-6px) scale(1.02);
   box-shadow: 0 28px 70px rgba(5, 15, 35, 0.2);
 }
 
@@ -548,6 +549,12 @@ h2 {
   margin-top: 0.6rem;
   color: var(--primary);
   font-weight: 700;
+}
+
+.card .text-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
 }
 
 .page-header {
