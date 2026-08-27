@@ -501,6 +501,31 @@ h2 {
   letter-spacing: 0.03em;
 }
 
+.card--photo {
+  position: relative;
+  min-height: 280px;
+  display: flex;
+  align-items: flex-end;
+  background-image: linear-gradient(180deg, rgba(7, 17, 31, 0.15) 0%, rgba(7, 17, 31, 0.55) 60%, rgba(7, 17, 31, 0.92) 100%), var(--card-photo);
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.card--photo h3 {
+  color: white;
+}
+
+.card--photo p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.card--photo .text-link {
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .card--text {
   padding: 1.5rem;
 }
