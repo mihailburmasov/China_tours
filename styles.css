@@ -79,6 +79,8 @@ img {
   border-radius: 999px;
   background: linear-gradient(135deg, var(--primary), #ff9f4d);
   color: white;
+  font-size: 1.35rem;
+  line-height: 1;
 }
 
 .menu-btn {
