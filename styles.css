@@ -704,6 +704,36 @@ h2 {
   color: var(--muted);
 }
 
+.phone-block {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.4rem;
+}
+
+.phone-line {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.phone-line--group {
+  margin-top: 1.1rem;
+}
+
+.phone-line__numbers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.phone-block a {
+  font-variant-numeric: tabular-nums;
+}
+
+.phone-note {
+  color: var(--muted);
+}
+
 .form-card {
   display: grid;
   gap: 0.9rem;
