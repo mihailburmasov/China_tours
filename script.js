@@ -28,7 +28,7 @@ document.querySelectorAll('.side-panel a').forEach((link) => {
 
 const form = document.getElementById('lead-form');
 const formNote = document.getElementById('form-note');
-const MAX_LINK = 'https://max.ru/heihedenta';
+const MAX_LINK = 'https://max.ru/u/f9LHodD0cOLKvkb7exP0dhqbYC5wEQEJTwSzVUF9Ki50zdva_kkZHOFp3MY';
 
 form?.addEventListener('submit', (event) => {
   event.preventDefault();
