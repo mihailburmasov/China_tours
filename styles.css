@@ -706,6 +706,12 @@ h2 {
   color: var(--muted);
 }
 
+.contact-list a,
+.contact-list .format-label {
+  color: var(--accent);
+  font-weight: 700;
+}
+
 .phone-block {
   display: flex;
   flex-direction: column;
