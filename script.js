@@ -28,34 +28,43 @@ document.querySelectorAll('.side-panel a').forEach((link) => {
 
 const form = document.getElementById('lead-form');
 const formNote = document.getElementById('form-note');
-const MAX_LINK = 'https://max.ru/u/f9LHodD0cOLKvkb7exP0dhqbYC5wEQEJTwSzVUF9Ki50zdva_kkZHOFp3MY';
+const LEAD_EMAIL = 'Heihetravel@yandex.ru';
 
 form?.addEventListener('submit', (event) => {
   event.preventDefault();
   const data = new FormData(form);
-  const summary = [
-    'Заявка с сайта Heihetravel',
-    `Имя: ${data.get('name') || '—'}`,
-    `Телефон: ${data.get('phone') || '—'}`,
-    `Даты поездки: ${data.get('dates') || '—'}`,
-    `Что важно: ${data.get('message') || '—'}`,
-  ].join('\n');
+  const payload = {
+    name: data.get('name') || '',
+    phone: data.get('phone') || '',
+    dates: data.get('dates') || '',
+    message: data.get('message') || '',
+    _subject: 'Новая заявка с сайта Heihetravel',
+  };
 
-  const openMax = () => window.open(MAX_LINK, '_blank', 'noopener');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  if (submitBtn) submitBtn.disabled = true;
+  if (formNote) formNote.textContent = 'Отправляем заявку…';
 
-  if (navigator.clipboard?.writeText) {
-    navigator.clipboard
-      .writeText(summary)
-      .then(openMax)
-      .catch(openMax);
-  } else {
-    openMax();
-  }
-
-  if (formNote) {
-    formNote.textContent = 'Спасибо! Текст заявки скопирован — мы открыли MAX, вставьте и отправьте сообщение, чтобы мы получили его быстрее всего.';
-  }
-  form.reset();
+  fetch(`https://formsubmit.co/ajax/${LEAD_EMAIL}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify(payload),
+  })
+    .then((response) => {
+      if (!response.ok) throw new Error('Request failed');
+      if (formNote) {
+        formNote.textContent = 'Спасибо! Заявка отправлена, мы свяжемся с вами в ближайшее время.';
+      }
+      form.reset();
+    })
+    .catch(() => {
+      if (formNote) {
+        formNote.innerHTML = `Не удалось отправить заявку автоматически. Напишите нам на <a href="mailto:${LEAD_EMAIL}">${LEAD_EMAIL}</a> или в мессенджер — мы обязательно ответим.`;
+      }
+    })
+    .finally(() => {
+      if (submitBtn) submitBtn.disabled = false;
+    });
 });
 
 const revealItems = document.querySelectorAll('.reveal');
