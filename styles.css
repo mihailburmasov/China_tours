@@ -730,6 +730,7 @@ h2 {
 
 .phone-block a {
   font-variant-numeric: tabular-nums;
+  font-weight: 700;
 }
 
 .phone-note {
